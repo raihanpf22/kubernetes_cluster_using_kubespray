@@ -58,6 +58,15 @@ kubernetes2-raihan ALL=(ALL) NOPASSWD:ALL
 
 kubernetes3-raihan ALL=(ALL) NOPASSWD:ALL
 ```
+# Or add new user to all node:
+
+```bash
+sudo adduser newuser
+```
+and, then run ansible using -u newuser -k -K:
+```bash
+ansible-playbook -i inventory/mycluster/hosts.yml --become --become-user=root cluster.yml -u newuser -k -K
+```
 
 now, 
 
